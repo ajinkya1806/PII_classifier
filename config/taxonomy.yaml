@@ -1,0 +1,403 @@
+# PII / Sensitive Data Classification Taxonomy
+# Regulation tags: DPDP | RBI-DADP | Both
+# Categories: Non-Sensitive | PII | Sensitive Personal Data (DPDP) | Financial Sensitive (RBI-DADP)
+
+subtypes:
+
+  # ──────────────────────────────────────────────
+  # Identity / Government ID
+  # ──────────────────────────────────────────────
+  - name: "Aadhaar number"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["aadhaar", "aadhar", "uid", "uidai", "aadhaar_no", "aadhar_number", "aadhaar_num", "aadhar_no", "unique_id"]
+    base_keyword_confidence: 0.65
+    pattern_ref: "aadhaar"
+
+  - name: "PAN"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["pan", "pan_number", "pan_no", "pan_card", "income_tax_id", "permanent_account"]
+    base_keyword_confidence: 0.65
+    pattern_ref: "pan"
+
+  - name: "Passport number"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["passport", "passport_no", "passport_number", "passport_num", "travel_doc"]
+    base_keyword_confidence: 0.65
+    pattern_ref: "passport"
+
+  - name: "Voter ID"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["voter_id", "epic", "epic_no", "voter_card", "election_id", "voter_number"]
+    base_keyword_confidence: 0.60
+    pattern_ref: "voter_id"
+
+  - name: "Driving license number"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["driving_license", "dl_number", "dl_no", "licence_no", "license_number", "driving_licence"]
+    base_keyword_confidence: 0.60
+    pattern_ref: "driving_license"
+
+  - name: "Ration card number"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["ration_card", "ration_no", "ration_number", "ration_card_no", "bpl_card"]
+    base_keyword_confidence: 0.55
+    pattern_ref: null
+
+  - name: "ABHA/Health ID"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["abha", "abha_id", "abha_number", "health_id", "abha_no", "ndhm_id", "ayushman_id"]
+    base_keyword_confidence: 0.60
+    pattern_ref: "abha_id"
+
+  # ──────────────────────────────────────────────
+  # Contact Information
+  # ──────────────────────────────────────────────
+  - name: "Full name"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["name", "full_name", "first_name", "last_name", "surname", "given_name", "middle_name", "customer_name", "person_name", "applicant_name", "employee_name", "user_name", "display_name", "fname", "lname"]
+    base_keyword_confidence: 0.50
+    pattern_ref: null
+
+  - name: "Email address"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["email", "email_address", "email_id", "mail", "e_mail", "emailid", "contact_email", "user_email"]
+    base_keyword_confidence: 0.60
+    pattern_ref: "email"
+
+  - name: "Phone/mobile number"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["phone", "mobile", "phone_number", "mobile_number", "contact_number", "cell", "telephone", "tel", "mob", "mobile_no", "phone_no", "contact_no", "whatsapp"]
+    base_keyword_confidence: 0.60
+    pattern_ref: "phone_india"
+
+  - name: "Postal address"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["address", "postal_address", "street_address", "mailing_address", "addr", "address_line", "address1", "address2", "residential_address", "permanent_address", "correspondence_address", "house_no"]
+    base_keyword_confidence: 0.50
+    pattern_ref: null
+
+  - name: "Pincode"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["pincode", "pin_code", "zip", "zipcode", "zip_code", "postal_code", "pin"]
+    base_keyword_confidence: 0.50
+    pattern_ref: "pincode"
+
+  # ──────────────────────────────────────────────
+  # Financial (RBI-DADP)
+  # ──────────────────────────────────────────────
+  - name: "Bank account number"
+    category: "Financial Sensitive (RBI-DADP)"
+    regulation: "RBI-DADP"
+    keywords: ["bank_account", "account_no", "acct_num", "bank_acct", "account_number", "savings_account", "current_account", "acct_no", "bank_account_no"]
+    base_keyword_confidence: 0.60
+    pattern_ref: "bank_account"
+
+  - name: "IFSC code"
+    category: "Financial Sensitive (RBI-DADP)"
+    regulation: "RBI-DADP"
+    keywords: ["ifsc", "ifsc_code", "ifsc_no", "bank_ifsc", "branch_code"]
+    base_keyword_confidence: 0.65
+    pattern_ref: "ifsc"
+
+  - name: "UPI VPA"
+    category: "Financial Sensitive (RBI-DADP)"
+    regulation: "RBI-DADP"
+    keywords: ["upi", "upi_id", "upi_vpa", "vpa", "upi_address", "upi_handle"]
+    base_keyword_confidence: 0.65
+    pattern_ref: "upi_vpa"
+
+  - name: "Credit/debit card number"
+    category: "Financial Sensitive (RBI-DADP)"
+    regulation: "Both"
+    keywords: ["card_number", "credit_card", "debit_card", "card_no", "cc_number", "card_num", "pan_card_no"]
+    base_keyword_confidence: 0.60
+    pattern_ref: "credit_card"
+
+  - name: "CVV"
+    category: "Financial Sensitive (RBI-DADP)"
+    regulation: "Both"
+    keywords: ["cvv", "cvv2", "cvc", "cvc2", "security_code", "card_verification"]
+    base_keyword_confidence: 0.65
+    pattern_ref: "cvv"
+
+  - name: "Card expiry"
+    category: "Financial Sensitive (RBI-DADP)"
+    regulation: "Both"
+    keywords: ["card_expiry", "expiry_date", "exp_date", "card_exp", "expiration_date", "valid_thru", "valid_till"]
+    base_keyword_confidence: 0.55
+    pattern_ref: "card_expiry"
+
+  - name: "PIN"
+    category: "Financial Sensitive (RBI-DADP)"
+    regulation: "Both"
+    keywords: ["pin", "atm_pin", "card_pin", "transaction_pin", "mpin", "t_pin", "tpin"]
+    base_keyword_confidence: 0.50
+    pattern_ref: null
+
+  - name: "Demat account number"
+    category: "Financial Sensitive (RBI-DADP)"
+    regulation: "RBI-DADP"
+    keywords: ["demat", "demat_account", "dp_id", "demat_no", "demat_number", "depository_account", "cdsl", "nsdl"]
+    base_keyword_confidence: 0.60
+    pattern_ref: null
+
+  - name: "Loan account number"
+    category: "Financial Sensitive (RBI-DADP)"
+    regulation: "RBI-DADP"
+    keywords: ["loan_account", "loan_no", "loan_number", "loan_id", "emi_account", "loan_acct"]
+    base_keyword_confidence: 0.55
+    pattern_ref: null
+
+  - name: "CIBIL/credit score"
+    category: "Financial Sensitive (RBI-DADP)"
+    regulation: "RBI-DADP"
+    keywords: ["cibil", "credit_score", "cibil_score", "credit_rating", "credit_bureau", "fico_score"]
+    base_keyword_confidence: 0.60
+    pattern_ref: null
+
+  - name: "Net worth/income figures"
+    category: "Financial Sensitive (RBI-DADP)"
+    regulation: "RBI-DADP"
+    keywords: ["net_worth", "income", "salary", "annual_income", "monthly_income", "gross_income", "net_income", "ctc", "compensation", "revenue", "earnings"]
+    base_keyword_confidence: 0.45
+    pattern_ref: null
+
+  - name: "Insurance policy number"
+    category: "Financial Sensitive (RBI-DADP)"
+    regulation: "RBI-DADP"
+    keywords: ["insurance_policy", "policy_number", "policy_no", "insurance_no", "policy_id", "lic_policy"]
+    base_keyword_confidence: 0.55
+    pattern_ref: null
+
+  - name: "Wallet ID"
+    category: "Financial Sensitive (RBI-DADP)"
+    regulation: "RBI-DADP"
+    keywords: ["wallet_id", "ewallet", "digital_wallet", "wallet_number", "paytm_id", "wallet_no"]
+    base_keyword_confidence: 0.55
+    pattern_ref: null
+
+  - name: "Crypto wallet address"
+    category: "Financial Sensitive (RBI-DADP)"
+    regulation: "RBI-DADP"
+    keywords: ["crypto_wallet", "bitcoin_address", "ethereum_address", "btc_address", "eth_address", "wallet_address", "crypto_address", "blockchain_address"]
+    base_keyword_confidence: 0.60
+    pattern_ref: "crypto_wallet"
+
+  # ──────────────────────────────────────────────
+  # Biometric
+  # ──────────────────────────────────────────────
+  - name: "Fingerprint reference"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "DPDP"
+    keywords: ["fingerprint", "finger_print", "thumbprint", "biometric_fingerprint", "fingerprint_hash", "fingerprint_template", "fingerprint_data", "fir_ref"]
+    base_keyword_confidence: 0.65
+    pattern_ref: null
+
+  - name: "Iris scan reference"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "DPDP"
+    keywords: ["iris", "iris_scan", "iris_data", "iris_template", "iris_ref", "eye_scan"]
+    base_keyword_confidence: 0.65
+    pattern_ref: null
+
+  - name: "Facial recognition template"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "DPDP"
+    keywords: ["face_recognition", "facial_template", "face_template", "face_data", "facial_recognition", "face_id", "face_encoding"]
+    base_keyword_confidence: 0.65
+    pattern_ref: null
+
+  - name: "Voice print reference"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "DPDP"
+    keywords: ["voice_print", "voiceprint", "voice_template", "voice_biometric", "voice_data", "voice_id", "speaker_id"]
+    base_keyword_confidence: 0.65
+    pattern_ref: null
+
+  - name: "Signature image reference"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "DPDP"
+    keywords: ["signature", "signature_image", "digital_signature", "sign_image", "signature_ref", "e_signature"]
+    base_keyword_confidence: 0.55
+    pattern_ref: null
+
+  # ──────────────────────────────────────────────
+  # Health
+  # ──────────────────────────────────────────────
+  - name: "Medical diagnosis/history"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "DPDP"
+    keywords: ["diagnosis", "medical_history", "medical_condition", "disease", "ailment", "health_condition", "clinical_history", "medical_record", "icd_code", "health_history"]
+    base_keyword_confidence: 0.55
+    pattern_ref: null
+
+  - name: "Prescription data"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "DPDP"
+    keywords: ["prescription", "rx", "medication", "drug_name", "medicine", "dosage", "prescribed_drug", "rx_data"]
+    base_keyword_confidence: 0.55
+    pattern_ref: null
+
+  - name: "Disability status"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "DPDP"
+    keywords: ["disability", "disability_status", "handicap", "pwd_status", "differently_abled", "disability_type", "udid"]
+    base_keyword_confidence: 0.60
+    pattern_ref: null
+
+  - name: "Health insurance ID"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "Both"
+    keywords: ["health_insurance", "health_insurance_id", "medical_insurance", "mediclaim", "health_card", "insurance_member_id"]
+    base_keyword_confidence: 0.55
+    pattern_ref: null
+
+  # ──────────────────────────────────────────────
+  # Sensitive Demographic
+  # ──────────────────────────────────────────────
+  - name: "Religion"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "DPDP"
+    keywords: ["religion", "religious_affiliation", "faith", "denomination", "religious_belief"]
+    base_keyword_confidence: 0.65
+    pattern_ref: null
+
+  - name: "Caste"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "DPDP"
+    keywords: ["caste", "caste_name", "caste_category", "sub_caste", "sc_st", "obc", "general_category", "caste_certificate"]
+    base_keyword_confidence: 0.65
+    pattern_ref: null
+
+  - name: "Political affiliation"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "DPDP"
+    keywords: ["political_party", "political_affiliation", "party_membership", "political_view", "political_opinion"]
+    base_keyword_confidence: 0.65
+    pattern_ref: null
+
+  - name: "Trade union membership"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "DPDP"
+    keywords: ["trade_union", "union_membership", "labor_union", "union_id", "union_member"]
+    base_keyword_confidence: 0.65
+    pattern_ref: null
+
+  - name: "Sexual orientation"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "DPDP"
+    keywords: ["sexual_orientation", "sexuality", "gender_identity", "lgbtq", "orientation"]
+    base_keyword_confidence: 0.70
+    pattern_ref: null
+
+  - name: "Genetic data"
+    category: "Sensitive Personal Data (DPDP)"
+    regulation: "DPDP"
+    keywords: ["genetic_data", "dna", "genome", "genetic_info", "genetic_test", "dna_sequence", "genotype"]
+    base_keyword_confidence: 0.65
+    pattern_ref: null
+
+  # ──────────────────────────────────────────────
+  # Credentials
+  # ──────────────────────────────────────────────
+  - name: "Password/password hash"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["password", "passwd", "pwd", "password_hash", "hashed_password", "pass_hash", "user_password", "login_password"]
+    base_keyword_confidence: 0.70
+    pattern_ref: null
+
+  - name: "Security question/answer"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["security_question", "secret_question", "security_answer", "secret_answer", "recovery_question", "challenge_question"]
+    base_keyword_confidence: 0.65
+    pattern_ref: null
+
+  - name: "API key"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["api_key", "apikey", "api_secret", "secret_key", "access_key", "client_secret", "app_key"]
+    base_keyword_confidence: 0.65
+    pattern_ref: null
+
+  - name: "Session/auth token"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["session_token", "auth_token", "access_token", "refresh_token", "jwt", "bearer_token", "oauth_token", "session_id"]
+    base_keyword_confidence: 0.65
+    pattern_ref: null
+
+  # ──────────────────────────────────────────────
+  # Online / Device Identifiers
+  # ──────────────────────────────────────────────
+  - name: "IP address"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["ip_address", "ip_addr", "ipv4", "ipv6", "client_ip", "source_ip", "remote_ip", "user_ip"]
+    base_keyword_confidence: 0.60
+    pattern_ref: "ip_address"
+
+  - name: "Device ID (IMEI/MAC)"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["device_id", "imei", "mac_address", "device_identifier", "hardware_id", "udid", "serial_number"]
+    base_keyword_confidence: 0.60
+    pattern_ref: "mac_address"
+
+  - name: "Cookie/ad ID"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["cookie_id", "ad_id", "advertising_id", "tracking_id", "gaid", "idfa", "cookie"]
+    base_keyword_confidence: 0.55
+    pattern_ref: null
+
+  - name: "Social media handle"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["social_media", "twitter_handle", "instagram_handle", "facebook_id", "linkedin_id", "social_handle", "twitter_id", "insta_id", "x_handle"]
+    base_keyword_confidence: 0.50
+    pattern_ref: null
+
+  # ──────────────────────────────────────────────
+  # Other Quasi-Identifiers
+  # ──────────────────────────────────────────────
+  - name: "Date of birth/age"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["dob", "date_of_birth", "birth_date", "birthday", "birthdate", "age", "birth_year"]
+    base_keyword_confidence: 0.55
+    pattern_ref: "dob"
+
+  - name: "Gender"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["gender", "sex", "male_female", "gender_identity"]
+    base_keyword_confidence: 0.45
+    pattern_ref: null
+
+  - name: "Vehicle registration number"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["vehicle_registration", "vehicle_no", "registration_number", "car_number", "vehicle_number", "license_plate", "number_plate", "reg_no"]
+    base_keyword_confidence: 0.55
+    pattern_ref: "vehicle_reg"
+
+  - name: "Employee ID"
+    category: "PII"
+    regulation: "DPDP"
+    keywords: ["employee_id", "emp_id", "staff_id", "employee_number", "emp_no", "emp_code", "personnel_id", "worker_id"]
+    base_keyword_confidence: 0.45
+    pattern_ref: null

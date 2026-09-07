@@ -1,0 +1,28 @@
+# Engine Weights Configuration
+# Weights must sum to 1.0 — validated on load
+
+engine_weights:
+  rule_engine: 0.35
+  pattern_engine: 0.45
+  llm_engine: 0.20
+
+# LLM is invoked only when combined rule+pattern confidence < this threshold
+llm_fallback_threshold: 0.4
+
+# Confidence bands for final classification
+confidence_bands:
+  high: 0.75      # >= 0.75 → high confidence classification
+  medium: 0.50    # >= 0.50 → medium confidence
+  low: 0.25       # >= 0.25 → low confidence
+  # < 0.25 → Non-Sensitive
+
+# Ollama / LLM configuration
+ollama:
+  model: "llama3.1"
+  base_url: "http://localhost:11434"
+  timeout_seconds: 30
+
+# Sampling configuration
+sampling:
+  max_rows: 100       # max rows to sample per column
+  mask_values: true   # mask sensitive values before LLM
